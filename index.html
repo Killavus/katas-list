@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Katas List</title>
+    <meta charset="UTF-8" />
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.11.1/react-with-addons.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sugar/1.4.1/sugar-full.min.js"></script>
+    <script src="src/app.js"></script>
+    <style>
+      .avatar { width: 3em; height: 3em; border-radius: 5px; margin-right: 1em; }
+      .developers-list .btn-primary {
+        margin-right: 1em;
+      }
+      .developers-list .controls-box {
+        margin-top: .66em;
+      }
+
+      .developers-list {
+        margin-top: 3em;
+      } 
+
+      .kata-completed {
+        background-color: #dff0d8;
+      }
+    </style>
+  </head>
+  <body>
+    <article class='container-fluid'>
+      <div class='row'>
+        <div class="col-md-offset-2 col-md-8">
+          <div data-app='completedKatasApp'></div>
+        </div>
+      </div>
+      <footer>
+        <h5 class="text-center">
+          <small>Part of the frontend course ran by Arkency &ndash; 2014</small>
+        </h5>
+      </footer>
+    </article>
+  </body>
+</html>
