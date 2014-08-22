@@ -66,13 +66,11 @@ class DisplayingCompletedKatasList
 
   kataMarkedAsCompleted: (developer, kata) =>
     developer.completeKata(kata)
-    @gui.refs["developer_#{developer.id}"].setState
-      developer: developer
+    @gui.setDeveloperState(developer.id, developer: developer)
 
   kataMarkedAsIncomplete: (developer, kata) =>
     developer.setKataAsIncomplete(kata)
-    @gui.refs["developer_#{developer.id}"].setState
-      developer: developer
+    @gui.setDeveloperState(developer.id, developer: developer)
 
 CompletedKatasList = React.createClass
   displayName: 'CompletedKatasList'
@@ -88,6 +86,9 @@ CompletedKatasList = React.createClass
         key: 'loadingMessage'
         className: 'list-group-item'
         "Loading..."
+
+  setDeveloperState: (developerID, newState) =>
+    @refs["developer_#{developerID}"].setState(newState)
 
   renderList: ->
     DOM.ul

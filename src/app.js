@@ -144,14 +144,14 @@
 
     DisplayingCompletedKatasList.prototype.kataMarkedAsCompleted = function(developer, kata) {
       developer.completeKata(kata);
-      return this.gui.refs["developer_" + developer.id].setState({
+      return this.gui.setDeveloperState(developer.id, {
         developer: developer
       });
     };
 
     DisplayingCompletedKatasList.prototype.kataMarkedAsIncomplete = function(developer, kata) {
       developer.setKataAsIncomplete(kata);
-      return this.gui.refs["developer_" + developer.id].setState({
+      return this.gui.setDeveloperState(developer.id, {
         developer: developer
       });
     };
@@ -174,6 +174,11 @@
         className: 'list-group-item'
       }, "Loading..."));
     },
+    setDeveloperState: (function(_this) {
+      return function(developerID, newState) {
+        return _this.refs["developer_" + developerID].setState(newState);
+      };
+    })(this),
     renderList: function() {
       var developer;
       return DOM.ul({
